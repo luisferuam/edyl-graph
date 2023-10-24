@@ -1,0 +1,4 @@
+from graph import Node
+
+n = Node("Madrid")
+print(n)

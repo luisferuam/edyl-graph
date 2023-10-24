@@ -1,0 +1,23 @@
+class Node():
+    """
+    A graph's node.
+
+    Args:
+        name: node's name.
+    """
+    def __init__(self, name: str) -> None:
+        self.name = name
+        self.neighbours = []
+
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, type(self)):
+            return NotImplemented
+        return self.name == other.name
+
+    def __repr__(self) -> str:
+        return (
+            f"{type(self).__name__}({self.name!r}, is_final={self.is_final!r})"
+        )
+
+    def __hash__(self) -> int:
+        return hash((self.name, self.is_final))
