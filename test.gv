@@ -1,0 +1,19 @@
+digraph {
+  rankdir=LR;
+
+  A[shape=circle]
+  G[shape=circle]
+  C[shape=circle]
+  E[shape=circle]
+  F[shape=circle]
+  B[shape=circle]
+  D[shape=circle]
+
+  A -> C
+  A -> B
+  A -> F
+  C -> E
+  B -> G
+  B -> D
+  D -> G
+}

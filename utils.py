@@ -65,8 +65,10 @@ class GraphFormat():
         return graph
 
     def write_dot(graph: Graph) -> str:
+        graph_type = "digraph" if graph.directed else "graph"
+        edge_symbol = "->" if graph.directed else "--"
         return (
-            "graph {\n"
+            f"{graph_type} {{\n"
             "  rankdir=LR;\n"
             "\n"
             + "".join(
@@ -75,9 +77,9 @@ class GraphFormat():
             )
             + "\n"
             + "".join(
-                f"  {node0.name} -- {node1.name}\n"
+                f"  {e[0]} {edge_symbol} {e[1]}\n"
             #    f"[label=\"{symbol_repr(t.symbol)}\"]\n"
-                for node0 in graph.nodes for node1 in node0.neighbours
+                for e in graph.get_edges()
             )
             + "}\n"
         )

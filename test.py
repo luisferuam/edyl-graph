@@ -1,3 +1,4 @@
+from graphviz import Source
 from graph import Node, Graph
 from utils import GraphFormat
 
@@ -17,3 +18,8 @@ g = GraphFormat.read('g1.txt')
 print(g)
 print(GraphFormat.write_dot(g))
 
+print(g.get_edges())
+
+
+s = Source(GraphFormat.write_dot(g), filename="test.gv", format="png")
+s.view()

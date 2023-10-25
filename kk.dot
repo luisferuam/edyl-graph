@@ -1,26 +1,19 @@
 graph {
   rankdir=LR;
 
-  B[shape=circle]
-  D[shape=circle]
   E[shape=circle]
-  F[shape=circle]
   G[shape=circle]
+  D[shape=circle]
+  F[shape=circle]
   C[shape=circle]
+  B[shape=circle]
   A[shape=circle]
 
-  B -- A
   B -- D
-  B -- G
-  D -- B
-  D -- G
-  E -- C
-  F -- A
-  G -- B
-  G -- D
-  C -- A
-  C -- E
-  A -- B
   A -- C
+  C -- E
+  B -- G
+  D -- G
   A -- F
+  A -- B
 }

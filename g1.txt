@@ -1,3 +1,4 @@
+directed
 A
 B
 C
