@@ -34,9 +34,11 @@ class Graph():
 
     Args:
         nodes: set of nodes.
+        directed: boolean flag indicating that the graph is directed.
     """
-    def __init__(self, nodes: Set = set()) -> None:
+    def __init__(self, nodes: Set = set(), directed: bool = False) -> None:
         self.nodes = nodes
+        self.directed = directed
 
     def __eq__(self, other: object) -> bool:
         if not isinstance(other, type(self)):

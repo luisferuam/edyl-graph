@@ -8,7 +8,7 @@ G
 A::B
 A::C
 A::F
-B>>D
-B>>G
+B::D
+B::G
 C::E
 D::G

@@ -15,3 +15,5 @@ print(g)
 
 g = GraphFormat.read('g1.txt')
 print(g)
+print(GraphFormat.write_dot(g))
+
