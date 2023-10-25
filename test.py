@@ -1,4 +1,5 @@
 from graph import Node, Graph
+from utils import GraphFormat
 
 n1 = Node("Madrid")
 n2 = Node("Barcelona")
@@ -12,5 +13,5 @@ g = Graph(set([n1, n2]))
 print(g)
 
 
-g = Graph.read('g1.txt')
+g = GraphFormat.read('g1.txt')
 print(g)
