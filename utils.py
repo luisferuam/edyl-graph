@@ -20,7 +20,8 @@ class GraphFormat():
         re_comment = re.compile(r"\s*#\.*")
         re_empty = re.compile(r"\s*")
         re_node = re.compile(r"\s*(\w+)\s*")
-        re_edge = re.compile(r"\s*(\w+)\s*::\s*(\w+)\s*")
+        re_edge = re.compile(r"\s*(\w+)\s*:\s*(\w+)\s*")
+        re_weighted_edge = re.compile(r"\s*(\w+)\s*:\s*(\w+)\s*:(\d+)\s*")#### To do...
         re_type_directed = re.compile(r"\s*directed\s*")
         
         read_mode = cls.ReadMode.TYPE
@@ -55,16 +56,26 @@ class GraphFormat():
                     if match:
                         n0 = name2node[match.groups()[0]]
                         n1 = name2node[match.groups()[1]]
-                        n0.add_neighbour(n1)
+                        n0.add_neighbour(n1, 0)
                         if not directed:
-                            n1.add_neighbour(n0)
+                            n1.add_neighbour(n0, 0)
+                        continue
+                    match = re_weighted_edge.fullmatch(line)
+                    if match:
+                        graph.set_weighted(True)
+                        n0 = name2node[match.groups()[0]]
+                        n1 = name2node[match.groups()[1]]
+                        w = float(match.groups()[2])
+                        n0.add_neighbour(n1, w)
+                        if not directed:
+                            n1.add_neighbour(n0, w)
                         continue
                     
                 raise FormatParseError(f"Invalid expression in line {i+1}: {line}")
 
         return graph
 
-    def write_dot(graph: Graph) -> str:
+    def write_dot(graph: Graph, shape: str = "circle") -> str:
         graph_type = "digraph" if graph.directed else "graph"
         edge_symbol = "->" if graph.directed else "--"
         return (
@@ -72,13 +83,13 @@ class GraphFormat():
             "  rankdir=LR;\n"
             "\n"
             + "".join(
-                f"  {node.name}[shape=circle]\n"
+                f"  {node.name}[shape={shape}]\n"
                 for node in graph.nodes
             )
             + "\n"
             + "".join(
-                f"  {e[0]} {edge_symbol} {e[1]}\n"
-            #    f"[label=\"{symbol_repr(t.symbol)}\"]\n"
+                f"  {e[0]} {edge_symbol} {e[1]}"
+            +   (f"[label=\"{e[2]}\"]\n" if graph.weighted else "\n")
                 for e in graph.get_edges()
             )
             + "}\n"

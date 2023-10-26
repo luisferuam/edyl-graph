@@ -1,19 +1,20 @@
-digraph {
+graph {
   rankdir=LR;
 
-  A[shape=circle]
-  G[shape=circle]
-  C[shape=circle]
-  E[shape=circle]
-  F[shape=circle]
-  B[shape=circle]
-  D[shape=circle]
+  B[shape=box]
+  D[shape=box]
+  F[shape=box]
+  E[shape=box]
+  C[shape=box]
+  G[shape=box]
+  A[shape=box]
 
-  A -> C
-  A -> B
-  A -> F
-  C -> E
-  B -> G
-  B -> D
-  D -> G
+  A -- B[label="0"]
+  A -- F[label="0"]
+  B -- G[label="0"]
+  C -- E[label="0"]
+  B -- D[label="0"]
+  D -- G[label="0"]
+  A -- C[label="0"]
+  A -- B[label="23.0"]
 }

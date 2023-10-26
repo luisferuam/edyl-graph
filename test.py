@@ -4,8 +4,8 @@ from utils import GraphFormat
 
 n1 = Node("Madrid")
 n2 = Node("Barcelona")
-n1.add_neighbour(n2)
-n2.add_neighbour(n1)
+n1.add_neighbour(n2, 100)
+n2.add_neighbour(n1, 200)
 print(n1)
 print(n2)
 
@@ -21,5 +21,5 @@ print(GraphFormat.write_dot(g))
 print(g.get_edges())
 
 
-s = Source(GraphFormat.write_dot(g), filename="test.gv", format="png")
+s = Source(GraphFormat.write_dot(g, "box"), filename="test.gv", format="png")
 s.view()
