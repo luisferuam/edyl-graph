@@ -14,7 +14,7 @@ g = Graph(set([n1, n2]))
 print(g)
 
 
-g = GraphFormat.read('g1.txt')
+g = GraphFormat.read('examples/g1.txt')
 print(g)
 print(GraphFormat.write_dot(g))
 
@@ -25,7 +25,7 @@ s = Source(GraphFormat.write_dot(g, "box"), filename="test.gv", format="png")
 s.view()
 
 
-g = GraphFormat.read('mundial.txt')
+g = GraphFormat.read('examples/mundial.txt')
 print(g)
 print(GraphFormat.write_dot(g))
 
