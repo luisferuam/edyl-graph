@@ -1,20 +1,20 @@
 graph {
   rankdir=LR;
 
-  G[shape=box]
-  B[shape=box]
-  E[shape=box]
-  F[shape=box]
-  C[shape=box]
   A[shape=box]
   D[shape=box]
+  C[shape=box]
+  G[shape=box]
+  E[shape=box]
+  B[shape=box]
+  F[shape=box]
 
-  D -- G[label="0"]
-  A -- B[label="23.0"]
-  A -- B[label="0"]
-  A -- F[label="0"]
-  C -- E[label="0"]
   B -- D[label="0"]
-  B -- G[label="0"]
+  A -- B[label="0"]
   A -- C[label="0"]
+  A -- B[label="23.0"]
+  B -- G[label="0"]
+  C -- E[label="0"]
+  A -- F[label="0"]
+  D -- G[label="0"]
 }

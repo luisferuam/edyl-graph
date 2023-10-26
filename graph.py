@@ -80,3 +80,8 @@ class Graph():
         # To do...
         # Only if num nodes small
         pass
+
+    def is_connected(self) -> int:
+        # To do...
+        # Only if num nodes small
+        pass

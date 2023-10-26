@@ -1,36 +1,36 @@
 graph {
   rankdir=LR;
 
-  Brasil[shape=box]
+  Francia[shape=box]
+  Alemania[shape=box]
   Uruguay[shape=box]
-  Checoslovaquia[shape=box]
-  Hungría[shape=box]
   Croacia[shape=box]
-  España[shape=box]
+  Hungría[shape=box]
+  Suecia[shape=box]
+  Inglaterra[shape=box]
   PaísesBajos[shape=box]
+  España[shape=box]
+  Brasil[shape=box]
   Italia[shape=box]
   Argentina[shape=box]
-  Francia[shape=box]
-  Inglaterra[shape=box]
-  Alemania[shape=box]
-  Suecia[shape=box]
+  Checoslovaquia[shape=box]
 
-  Brasil -- Suecia
+  Checoslovaquia -- Italia
+  Brasil -- Francia
+  Argentina -- Uruguay
   Alemania -- Italia
   Alemania -- PaísesBajos
-  Francia -- Italia
-  Alemania -- Argentina
-  Alemania -- Hungría
-  Argentina -- Uruguay
-  Argentina -- PaísesBajos
-  Croacia -- Francia
-  Brasil -- Francia
-  Checoslovaquia -- Italia
-  Alemania -- Inglaterra
   Brasil -- Checoslovaquia
-  Alemania -- Brasil
-  España -- PaísesBajos
-  Brasil -- Uruguay
   Hungría -- Italia
+  Argentina -- PaísesBajos
+  España -- PaísesBajos
+  Alemania -- Argentina
+  Brasil -- Suecia
+  Alemania -- Brasil
+  Croacia -- Francia
+  Alemania -- Hungría
+  Francia -- Italia
+  Alemania -- Inglaterra
+  Brasil -- Uruguay
   Brasil -- Italia
 }
