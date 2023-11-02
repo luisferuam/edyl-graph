@@ -26,14 +26,14 @@ s = Source(GraphFormat.write_dot(g, "box"), filename="test.gv", format="png")
 s.view()
 
 
-g = GraphFormat.read('examples/mundial.txt')
-print(g)
-print(GraphFormat.write_dot(g))
+#g = GraphFormat.read('examples/mundial.txt')
+#print(g)
+#print(GraphFormat.write_dot(g))
 
-print(g.get_edges())
+#print(g.get_edges())
 
-s = Source(GraphFormat.write_dot(g, "box"), filename="test2.gv", format="png")
-s.view()
+#s = Source(GraphFormat.write_dot(g, "box"), filename="test2.gv", format="png")
+#s.view()
 
 
 

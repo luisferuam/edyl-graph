@@ -68,20 +68,16 @@ class Graph():
                     
     def adjacency_matrix(self) -> None:
         # To do...
-        # Only if num nodes small
         pass
 
     def num_nodes(self) -> int:
         # To do...
-        # Only if num nodes small
         pass
 
     def num_edges(self) -> int:
         # To do...
-        # Only if num nodes small
         pass
 
     def is_connected(self) -> int:
         # To do...
-        # Only if num nodes small
         pass
